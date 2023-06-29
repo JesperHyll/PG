@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import hejarray, { jesperFunction } from './jesper';
+import { useState } from 'react';
 
 function App() {
+  const hookArray = useState(() => {
+    return hejarray.join(', ... ');
+  });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +21,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn javascript
+          {hookArray}
+          <br />
+          {jesperFunction()}
         </a>
       </header>
     </div>
